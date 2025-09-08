@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let choice = +prompt("Nhập số các bạn muốn chọn: ")
+    switch (choice) {
+        case 1:
+            alert("Số 1")
+            break;
+        case 2:
+            alert("Số 2");
+            break;
+        case 3:
+            alert("Số 3");
+            break;
+        default: {
+            alert("Khôg phải số 1, 2 và 3")
+        }
+    }
+
+
+    //     Tính số ngày của tháng trong 1 năm bất kỳ
+    let month = +prompt("Nhập tháng");
+    switch (month) {
+
+        case 2:
+            let year = +prompt("Nhập năm: ");
+            let isLeapYear = year %400 ===0 || (year % 4 === 0 && year %100 !== 0);
+            if(isLeapYear) {
+                alert("Tháng 2  có 29 ngày");
+            } else {
+                alert("Tháng 2 có 28 ngày");
+            }
+            break;
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert(`Tháng ${month} có 31 ngày`)
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert(`Tháng ${month} có 30 ngày`)
+            break;
+    }
+</script>
+</body>
+</html>

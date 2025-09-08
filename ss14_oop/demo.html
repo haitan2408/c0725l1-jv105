@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   class Product {
+       id;
+       name;
+       price;
+       manufacturer;
+       description;
+
+       constructor(id, name, price, manufacturer, description) {
+           this.id = id;
+           this.name=name;
+           this.price = price;
+           this.manufacturer = manufacturer;
+           this.description = description;
+       }
+
+       tinhChuVi() {
+           return (this.dai + this.rong)* 2;
+       }
+   }
+   let chocopie = new Product(1, "Chocopie", 20000, "Không biết", "Không biết");
+   chocopie.tinhChuVi();
+   console.log(chocopie)
+</script>
+</body>
+</html>
