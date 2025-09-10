@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        id;
+        name;
+        dob;
+        address;
+
+
+        constructor(id, name, dob, address) {
+            this.id = id;
+            this.name = name;
+            this.dob = dob;
+            this.address = address;
+        }
+    }
+
+    class Student extends Person {
+        module;
+        point;
+
+        constructor(id, name, dob, address, module, point) {
+            super(id, name, dob, address);
+            this.module = module;
+            this.point = point;
+            this._name = name;
+        }
+    }
+
+    let quan = new Student(1, "Quân", "1111-11-11", "QN", 1, undefined);
+    console.log(quan)
+</script>
+</body>
+</html>

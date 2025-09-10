@@ -6,28 +6,48 @@
 </head>
 <body>
 <script>
-   class Product {
-       id;
-       name;
-       price;
-       manufacturer;
-       description;
+    class Product {
+        id;
+        name;
+        price;
+        manufacturer;
+        description;
 
-       constructor(id, name, price, manufacturer, description) {
-           this.id = id;
-           this.name=name;
-           this.price = price;
-           this.manufacturer = manufacturer;
-           this.description = description;
-       }
+        constructor(id, name, price, manufacturer, description) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+            this.manufacturer = manufacturer;
+            this.description = description;
+        }
 
-       tinhChuVi() {
-           return (this.dai + this.rong)* 2;
-       }
-   }
-   let chocopie = new Product(1, "Chocopie", 20000, "Không biết", "Không biết");
-   chocopie.tinhChuVi();
-   console.log(chocopie)
+    }
+
+    let chocopie = new Product(1, "Chocopie", 20000, "Không biết", "Không biết");
+    let products = [];
+    products.push(chocopie);
+    products.push(new Product(2, "Bánh quy", 21000, "Không biết", "Rẻ hơn Chocopie"))
+
+    function display() {
+        products.sort((a,b) => {
+            return a.name.localeCompare(b.name);
+        })
+        let result = "<table border='1px' width='500px'>";
+
+        for (let i = 0; i < products.length; i++) {
+           result +="<tr>"
+            result+= `<td>${products[i].id}</td>`;
+            result+= `<td>${products[i].name}</td>`;
+            result+= `<td>${products[i].price}</td>`;
+            result+= `<td>${products[i].manufacturer}</td>`;
+            result+= `<td>${products[i].description}</td>`;
+           result +="</tr>"
+        }
+        result += "</table>"
+        document.writeln(result);
+    }
+
+    display();
 </script>
 </body>
 </html>
